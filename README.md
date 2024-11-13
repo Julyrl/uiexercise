@@ -10,8 +10,8 @@
 
 ## Structure
 
-* Folder Features_Keywords: Keywords
-* Folder Pages_methods: Methods implemented
+* Folder Features_Keywords: User stories and Scenarios (BDD) 
+* Folder Pages_methods: Keywords implemented
 * Folder Web_elements: List elements 
 
 
