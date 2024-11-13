@@ -10,8 +10,8 @@
 
 ## Structure
 
-### Folder Features_Keywords: Keywords
-### Folder Pages_methods: Methods implemented
-### Folder Web_elements: List elements 
+### 1. Folder Features_Keywords: Keywords
+### 2. Folder Pages_methods: Methods implemented
+### 3. Folder Web_elements: List elements 
 
 
