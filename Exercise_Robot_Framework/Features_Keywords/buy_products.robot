@@ -15,7 +15,6 @@ Feature 1 - Search and select shirts
     ...                I want to access the online store 
     ...                In order to select two shirts
     [Tags]             search_products
-
     Given I accessed the store
     And I navigate to the Products page
     When I search the "shirts"
@@ -24,8 +23,8 @@ Feature 1 - Search and select shirts
     
  Feature 2 - Add products to cart
     [Documentation]    As a normal user 
-    ...                I want to access the online store 
-    ...                In order to add products in the cart
+    ...                I want to select two shirts 
+    ...                In order to add them to the cart
     [Tags]             add_cart 
     Given I selected the "shirts"
     When I click on cart button 
@@ -42,11 +41,11 @@ Feature 1 - Search and select shirts
     Then The user is logged successfuly 
 
 
- Feature 4 - Pay and confirm purchase
+ Feature 4 - Pay and confirm order
     [Documentation]    As a normal user 
-    ...                I want to access the online store 
-    ...                In order complete the purchase
-    [Tags]             complete_purchase
+    ...                I want to fill the credit card information
+    ...                In order complete the order
+    [Tags]             complete_order
     Given I logged into the online store
     And I clicked on Place Order button
     When I fill the card information
