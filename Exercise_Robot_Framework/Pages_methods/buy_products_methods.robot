@@ -1,9 +1,9 @@
-*** Settings ***
+** Settings ***
 Library        SeleniumLibrary
 Library        Screenshot
 Library        OperatingSystem
-
 Resource        ../Web_elements/web_elements.robot
+Variables       ../Web_elements/data.yml
 
 *** Keywords ***
 
@@ -14,11 +14,10 @@ I navigate to the Products page
     Click Element                    ${menu_products}  
 
  I search the "shirts"
-    
     Input Text                        ${txt_search_product}    shirts
     Click Button                      ${btn_search}
 The products are visible
-    Execute JavaScript                   window.scrollTo(0,800)
+    Execute JavaScript                   window.scrollTo(0,600)
     Wait Until Element Is Visible        ${product}
     Element Should Be Visible            ${product}  
     Take Screenshot  
@@ -55,8 +54,8 @@ The products are visible in the cart
      Click Element                                ${btn_proceed_checkout}
 I fill out the authentication data
      Click Element                              ${link_login}
-     Input Text                                 ${txt_login}      ${user_login}
-     Input Text                                 ${txt_pwd}        ${user_pwd}
+     Input Text                                 ${txt_login}        ${login.user}
+     Input Text                                 ${txt_pwd}          ${login.pwd}
      Click Button                               ${btn_login}
 The user is logged successfuly 
     Take Screenshot
@@ -80,7 +79,7 @@ I logged into the online store
     Input Text    ${txt_card_name}            Joana Martins CaseTest
     Input Text    ${txt_card_number}          5544 5352 3550 2249
     Input Text    ${txt_card_cvc}             124
-    Input Text    ${txt_card_expiration}      12
+    Input Text    ${txt_card_expiration}      13
     Input Text    ${txt_card_year}            2025
      
 I click on Confirm button
@@ -90,7 +89,6 @@ I click on Confirm button
 The order is completed successfuly 
     Element Should Be Visible               ${text_order_placed}
     Take Screenshot
-
 
 
 
