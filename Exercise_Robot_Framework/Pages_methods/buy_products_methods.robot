@@ -5,11 +5,7 @@ Library        OperatingSystem
 
 Resource        ../Web_elements/web_elements.robot
 
-
-
-
 *** Keywords ***
-
 
 I accessed the store
     Go To                            ${URL_store}
@@ -22,9 +18,9 @@ I navigate to the Products page
     Input Text                        ${txt_search_product}    shirts
     Click Button                      ${btn_search}
 The products are visible
-    Execute JavaScript                    window.scrollTo(0,600)
-  #  Wait Until Element Is Visible        ${name_product}
-  #  Element Should Be Visible            ${name_product}  
+    Execute JavaScript                   window.scrollTo(0,800)
+    Wait Until Element Is Visible        ${product}
+    Element Should Be Visible            ${product}  
     Take Screenshot  
 
 I selected the "shirts"
@@ -34,7 +30,7 @@ I selected the "shirts"
     The products are visible
     
 I click on cart button 
-    Wait Until Element Is Visible             ${product}   15  
+    Wait Until Element Is Visible             ${product}   3  
     Mouse Over                                ${product}
     Take Screenshot
     Wait Until Element Is Visible             ${btn_add_cart}
@@ -59,7 +55,7 @@ The products are visible in the cart
      Click Element                                ${btn_proceed_checkout}
 I fill out the authentication data
      Click Element                              ${link_login}
-     Input Text                                 ${txt_login}    ${user_login}
+     Input Text                                 ${txt_login}      ${user_login}
      Input Text                                 ${txt_pwd}        ${user_pwd}
      Click Button                               ${btn_login}
 The user is logged successfuly 
@@ -76,7 +72,7 @@ I logged into the online store
  I clicked on Place Order button
      Click Link                                    ${cart_menu}
      Click Link                                    ${btn_proceed_checkout}
-     Execute JavaScript                    window.scrollTo(0,600)
+     Execute JavaScript                            window.scrollTo(0,800)
      Wait Until Element Is Visible                 ${btn_place_order}
      Click Element                                 ${btn_place_order}
 
@@ -88,10 +84,11 @@ I logged into the online store
     Input Text    ${txt_card_year}            2025
      
 I click on Confirm button
-    Click Button    ${btn_confirm_order}
+    Execute JavaScript                      window.scrollTo(0,700)
+    Click Button                            ${btn_confirm_order}
 
 The order is completed successfuly 
-    Element Should Be Visible   ${text_order_placed}
+    Element Should Be Visible               ${text_order_placed}
     Take Screenshot
 
 
