@@ -77,10 +77,10 @@ I logged into the online store
      Click Element                                 ${btn_place_order}
 
  I fill the card information
-    Input Text    ${txt_card_name}            test
-    Input Text    ${txt_card_number}          1234
-    Input Text    ${txt_card_cvc}             311
-    Input Text    ${txt_card_expiration}      10
+    Input Text    ${txt_card_name}            Joana Martins CaseTest
+    Input Text    ${txt_card_number}          5544 5352 3550 2249
+    Input Text    ${txt_card_cvc}             124
+    Input Text    ${txt_card_expiration}      12
     Input Text    ${txt_card_year}            2025
      
 I click on Confirm button
